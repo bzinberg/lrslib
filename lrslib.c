@@ -686,7 +686,7 @@ long
 lrs_init (char *name)       /* returns TRUE if successful, else FALSE */
 {
 #ifndef PLRS
- if(overflow!=2)
+ if(overflow!=2 && name != NULL)
   lrs_print_header(name);
 #endif
 
@@ -839,6 +839,23 @@ lrs_alloc_dat (const char *name)
 
   return Q;
 }				/* end of allocate and initialize lrs_dat */
+
+void
+lrs_init_dat (lrs_dat * Q, long m, long n, long hull)
+{
+  long i;
+  Q->m = m;
+  Q->n = n;
+  if (hull)
+    {
+      Q->hull = TRUE;
+      Q->polytope = TRUE;		/* will be updated as input read */
+    }
+  else
+    {
+      Q->hull = FALSE;
+    }
+}				/* end lrs_init_dat */
 
 /*******************************/
 /*  lrs_read_dat               */
