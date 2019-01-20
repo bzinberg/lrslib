@@ -879,7 +879,7 @@ lrs_read_dat (lrs_dat * Q, int argc, char *argv[])
   int c;			/* for fgetc */
 
 #ifndef PLRS
-  Q->verbose=TRUE;
+  /* Q->verbose=TRUE; */
 #endif
   *tmpfilename='\0';
   if(overflow==2)              /* otherwise overwrite output */
