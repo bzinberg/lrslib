@@ -36,6 +36,7 @@ LIBDIR     = /usr/lib
 #LIBDIR     = /usr/local/lib:/usr/lib
 
 CFLAGS     = -O3 -Wall
+CPPFLAGS   = -DLRS_QUIET
 SHLIB_CFLAGS = -fPIC
 mpicxx=mpic++
 
@@ -228,25 +229,25 @@ lrsnash-shared: ${SHLINK}  lrsnash.c
 # build object files for the shared library
 
 lrslib1-shr.o: lrslib.c lrslib.h
-	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -DMA -DSAFE -DLRSLONG -c -o $@ lrslib.c
+	$(CC) ${CFLAGS} ${CPPFLAGS} ${SHLIB_CFLAGS} -DMA -DSAFE -DLRSLONG -c -o $@ lrslib.c
 
 lrsdriver-shr.o: lrsdriver.c
-	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -c -o $@ $<
+	$(CC) ${CFLAGS} ${CPPFLAGS} ${SHLIB_CFLAGS} -c -o $@ $<
 
 lrslong1-shr.o: lrslong.c lrslong.h
-	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -DMA -DSAFE -DLRSLONG -c -o $@ lrslong.c
+	$(CC) ${CFLAGS} ${CPPFLAGS} ${SHLIB_CFLAGS} -DMA -DSAFE -DLRSLONG -c -o $@ lrslong.c
 
 lrslong2-shr.o: lrslong.c lrslong.h
-	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -DMA -DSAFE -DB128 -DLRSLONG -c -o $@ lrslong.c
+	$(CC) ${CFLAGS} ${CPPFLAGS} ${SHLIB_CFLAGS} -DMA -DSAFE -DB128 -DLRSLONG -c -o $@ lrslong.c
 
 lrslibgmp-shr.o: lrslib.c lrslib.h
-	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -DMA -DGMP -I${INCLUDEDIR} -c -o $@ lrslib.c
+	$(CC) ${CFLAGS} ${CPPFLAGS} ${SHLIB_CFLAGS} -DMA -DGMP -I${INCLUDEDIR} -c -o $@ lrslib.c
 
 lrsgmp-shr.o: lrsgmp.c lrsgmp.h
-	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -DMA -DGMP -I${INCLUDEDIR} -c -o $@ lrsgmp.c
+	$(CC) ${CFLAGS} ${CPPFLAGS} ${SHLIB_CFLAGS} -DMA -DGMP -I${INCLUDEDIR} -c -o $@ lrsgmp.c
 
 lrslib2-shr.o: lrslib.c lrslib.h
-	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -DMA -DSAFE -DB128 -DLRSLONG -c -o $@ lrslib.c
+	$(CC) ${CFLAGS} ${CPPFLAGS} ${SHLIB_CFLAGS} -DMA -DSAFE -DB128 -DLRSLONG -c -o $@ lrslib.c
 
 ######################################################################
 # install targets
