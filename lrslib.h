@@ -57,6 +57,7 @@
 #define lrs_alloc_dat suf(lrs_alloc_dat)
 #define lrs_alloc_dic suf(lrs_alloc_dic)
 #define lrs_init_dat suf(lrs_init_dat)
+#define lrs_setdebug suf(lrs_setdebug)
 #define lrs_cache_to_file suf(lrs_cache_to_file)
 #define lrs_cfp suf(lrs_cfp)
 #define lrs_checkbound suf(lrs_checkbound)
@@ -360,6 +361,7 @@ void  redund_print(lrs_mp_matrix Ain,lrs_dic *P,lrs_dat *Q);
 lrs_dat *lrs_alloc_dat (const char *name);	/* allocate for lrs_dat structure "name"       */
 lrs_dic *lrs_alloc_dic (lrs_dat * Q);	/* allocate for lrs_dic structure corr. to Q   */
 void lrs_init_dat (lrs_dat * Q, long m, long n, long hull); /* Initialize Q with matrix A */
+void lrs_setdebug (lrs_dat * Q, long debug); /* set debug level */
 long lrs_estimate (lrs_dic * P, lrs_dat * Q);	/* get estimates only and returns est number of cobases in subtree */
 long lrs_read_dat (lrs_dat * Q, int argc, char *argv[]);	/* read header and set up lrs_dat               */
 long lrs_read_dic (lrs_dic * P, lrs_dat * Q);	/* read input and set up problem and lrs_dic    */
