@@ -35,7 +35,7 @@ default: lrs
 INCLUDEDIR = /usr/local/include
 LIBDIR     = /usr/local/lib
 
-CFLAGS     = -O3 -Wall 
+CFLAGS     ?= -O3 -Wall
 #CFLAGS     = -g -Wall 
 
 #use this if you want only output file contain data between begin/end lines
