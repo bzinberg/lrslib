@@ -1118,7 +1118,7 @@ void updateFwidth(game *g, int col, int pos, char *str) {
                 ((gInfo *)g->aux)->fwidth[col][pos] = len;
 }
 
-// Definition of extern variable declared in the .h
-long FirstTime;
+static long FirstTime;
+void resetNashSolver() { FirstTime = TRUE; }
 
 /******************** end of lrsnashlib.c ***************************/
