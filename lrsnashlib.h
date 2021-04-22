@@ -68,6 +68,6 @@ void updateFwidth(game *g, int col, int pos, char *str);
 void resetNashSolver();  /* Call this function for every new game to be solved */
 
 
-static long Debug_flag;
-static long Verbose_flag;
+extern long Debug_flag;
+extern long Verbose_flag;
 
